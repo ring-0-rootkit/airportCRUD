@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create aircraft</title>
+</head>
+<body>
+<p>
+    <b><a href="/">Homepage</a></b>
+</p>
+
+<form th:action="@{/aircraft/create}" method = "post">
+    <label for="company">Company:
+        <input id="company" type="text" name="company">
+    </label><br>
+    <label for="model">Model:
+        <input id="model" type="text" name="model">
+    </label><br>
+    <button type="submit">Create</button>
+</form>
+</body>
+</html>

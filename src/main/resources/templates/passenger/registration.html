@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<p>
+    <b><a href="/">Homepage</a></b>
+</p>
+
+<form th:action="@{/passenger/registration}" method = "post" th:object="${passenger}">
+    <label for="age">Age:
+        <input id="age" type="number" name="age" th:value="*{age}">
+    </label><br>
+    <label for="sex">Sex:
+        <input id="sex" type="text" name="sex" th:value="*{sex}">
+    </label><br>
+    <button type="submit">Register</button>
+    <div th:if="${errors}">
+        <p style="color: red" th:each="error : ${errors}" th:text="${error.defaultMessage}">ErrorMessage</p>
+    </div>
+</form>
+</body>
+</html>

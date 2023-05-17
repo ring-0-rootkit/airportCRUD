@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create flight</title>
+</head>
+<body>
+<p>
+    <b><a href="/">Homepage</a></b>
+</p>
+
+<p><b th:text="${flight.toString()}">flight</b></p>
+<form th:action="@{/flight?flightId={flightId}(flightId=${flight.id})}" method = "post">
+    <label for="id">Enter your user id:
+        <input id="id" type="number" name="id">
+    </label><br>
+    <button type="submit">Buy</button>
+</form>
+<form th:action="@{/flight/{flightId}/delete(flightId=${flight.id})}" method="post">
+    <button type="submit">Delete flight</button>
+</form>
+</body>
+</html>

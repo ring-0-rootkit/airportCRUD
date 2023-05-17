@@ -1,0 +1,24 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource:
+    username : postgres
+    password : password
+    driver-class-name : org.postgresql.Driver
+    url : jdbc:postgresql://postgresql_db:5432/airport
+
+
+  jpa:
+    properties.hibernate:
+#      show_sql: true
+      format_sql: true
+    hdm2ddl.auto: validate
+    open-in-view: false
+
+
+logging:
+  level.org.springframework.jdbc.core: TRACE
+  file:
+    name: "logs/applicationRuntime.log"

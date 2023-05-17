@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete aircraft</title>
+</head>
+<body>
+<p>
+    <b><a href="/">Homepage</a></b>
+</p>
+
+<p>Click on aircraft to delete it.</p>
+<div th:each="aircraft : ${aircrafts}">
+    <p>
+        <a th:href="@{'/aircraft/' + ${aircraft.id}}" th:text="${aircraft.toString()}">Aircraft</a>
+    </p>
+</div>
+</body>
+</html>

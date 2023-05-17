@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Action</title>
+</head>
+<body>
+<p>
+    <b><a href="/">Homepage</a></b>
+</p>
+
+<form th:action="@{/passenger}" method = "post">
+    <label for="id">Passenger id:
+        <input id="id" type="number" name="id">
+    </label><br>
+
+    <button type="submit">Update</button>
+</form>
+<p>
+<a href="/passenger/registration">Create user</a>
+<br><p>
+<a href="/flight">Order a ticket</a>
+</body>
+</html>

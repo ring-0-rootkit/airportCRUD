@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<p>
+    <b><a href="/">Homepage</a></b>
+</p>
+
+<form action="/flight">
+    <label for="cityFrom">City from:
+        <input id="cityFrom" type="text" name="cityFrom">
+    </label>
+    <label for="cityTo">City to:
+        <input id="cityTo" type="text" name="cityTo">
+    </label>
+    <label for="dateOut">Date:
+        <input id="dateOut" type="date" name="dateOut">
+    </label>
+    <div>
+        <label for="ordering"> Cost order:
+            <select id="ordering" name="order">
+                <option th:each="order : ${ordering}"
+                        th:value="${order}"
+                        th:text="${order}">Order</option>
+            </select>
+        </label>
+    </div>
+    <button type="submit">Filter</button>
+</form>
+<div th:each="flight : ${flights}">
+    <a th:href="@{'/flight/' + ${flight.id}}" th:text="${flight.toString()}">Flight</a>
+    <hr>
+</div>
+</body>
+</html>

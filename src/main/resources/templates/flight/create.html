@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create flight</title>
+</head>
+<body>
+<p>
+    <b><a href="/">Homepage</a></b>
+</p>
+
+<form th:action="@{/flight/create}" method = "post">
+    <label for="cityFrom">City from:
+        <input id="cityFrom" type="text" name="cityFrom">
+    </label><br>
+    <label for="cityTo">City to:
+        <input id="cityTo" type="text" name="cityTo">
+    </label><br>
+    <label for="date">Departure date:
+        <input id="date" type="date" name="date">
+    </label><br>
+    <label for="cost">Cost:
+        <input id="cost" type="number" name="cost">
+    </label><br>
+    <div>
+        <label for="aircraft">Aircraft:
+            <select id="aircraft" name="aircraftId">
+                <option th:each="aircraft :${aircrafts}"
+                        th:value="${aircraft.getId()}"
+                        th:text="${aircraft.toString()}">Aircraft</option>
+            </select>
+        </label>
+    </div>
+
+    <button type="submit">Create</button>
+</form>
+</body>
+</html>

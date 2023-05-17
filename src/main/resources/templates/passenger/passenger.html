@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<p>
+    <b><a href="/">Homepage</a></b>
+</p>
+
+<p> Passenger id is <b th:text="${passenger.id}">passengerId</b></p>
+<form th:action="@{/passenger/{passengerId}/update(passengerId=${passenger.id})}" method = "post" th:object="${passenger}">
+    <label for="age">Age:
+        <input id="age" type="number" name="age" th:value="*{age}">
+    </label><br>
+    <label for="sex">Sex:
+        <input id="sex" type="text" name="sex" th:value="*{sex}">
+    </label><br>
+    <button type="submit">Update</button>
+</form>
+<form th:action="@{/passenger/{passengerId}/delete(passengerId=${passenger.id})}" method="post">
+    <button type="submit">Delete passenger</button>
+</form>
+<p>Click on ticket to delete it.</p>
+<div th:each="ticket : ${tickets}">
+    <a th:href="@{'/flight/ticket/' + ${ticket.id} + '/delete?passengerId=' + ${passenger.id}}" th:text="${ticket.toString()}">Ticket</a>
+</div>
+</body>
+</html>
+
+<!--edit passenger and delete pass and delete ticket by id-->
