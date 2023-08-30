@@ -20,4 +20,19 @@ So i don't have good features :)
  
   # Docker
 
-  I don't think this is a really good project so I think I won't putit to docker.
+I created docker-compose file so if u want to try to run this project u should:
+- clone this repo to your pc:
+  You can just download this project as .zip or You can use git:
+  
+  ```bash
+  git clone https://github.com/Ord1naryMan/airportCRUD
+  ```
+- run it in docker:
+  for this u should have docker locally installed.
+
+  Execute this in terminal:
+  ```bash
+  docker compose up --build
+  ```
+
+- now u can go to localhost:8080 and look at it
